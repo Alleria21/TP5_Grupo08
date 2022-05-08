@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ar.edu.unju.fi</groupId>
-    <artifactId>TP4_Grupo08</artifactId>
+    <artifactId>TP5_Grupo08</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>TP4_Grupo08</name>
-    <description>TP4_Grupo08</description>
+    <name>TP5_Grupo08</name>
+    <description>TP5_Grupo08</description>
     <properties>
         <java.version>17</java.version>
     </properties>
