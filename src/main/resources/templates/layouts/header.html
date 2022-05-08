@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<nav id="generalheader" th:fragment="generalheader">
+        <ul>
+            <li> <a href="inicio"> Inicio </a></li>
+            <li> <a href="agenda"> Agenda</a></li>
+            <li> <a href="beneficios"> Beneficios y Becas </a></li>
+            <li> <a href="contacto"> Contáctanos </a></li>
+        </ul>
+    </nav>
+    
+	<header id="headerindex" th:fragment="headerindex">
+        <h1 style="text-align: center"> Nuestro Primer Proyecto HTML</h1>
+        <div style="text-align: center">
+            <img src="images/equipo.jpg" alt="equipo" title="trabajo en equipo" style="width: 700px ">
+        </div>
+    </header>
+    
+    <header id="headerangeda" th:fragment="headeragenda">
+			<h1 style="text-align: center"> Agenda</h1>	
+			<div style="text-align: center">
+				<img src="images/731calendar_100366.png" alt="imagen de calendario" title="calendario" width="300" height="340">
+			</div>
+    </header>
+    
+    <header id="headerbeneficios" th:fragment="headerbeneficios">
+    	<h1 style="text-align: center">Becas y Beneficios</h1>
+        <div style="text-align: center">
+            <img src="images/becas.jpg" alt="equipo" title="becas" style="width: 700px ">
+        </div>
+    </header>
+    
+    <header id="headercontactos" th:fragment="headercontactos">
+		<h1>Contactos</h1>
+		<img alt="contactos" src="images/contactos.jpg" style="width: 700px " title="Contactos">
+    </header>
+    
+</body>
+</html>
