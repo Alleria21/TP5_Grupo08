@@ -1,42 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-	<header>
-	<h1>
-		Contactos
-	</h1>
-	<img
-		 alt="contactos" src="../static/images/contactos.jpg" style="width: 700px " title="Contactos"
-	>
-</header>
-<nav>
-	<ul>
-		<li>
-			<a href="index.html">
-			Inicio
-			</a>
-		</li>
-		<li>
-			<a href="agenda.html">
-			Agenda
-			</a>
-		</li>
-		<li>
-			<a href="beneficios.html">
-			Beneficios y Becas
-			</a>
-		</li>
-		<li>
-			<a href="contacto.html">
-			Contáctanos
-			</a>
-		</li>
-	</ul>
-</nav>
+<div th:insert="layouts/header :: headercontactos"></div>
+<nav th:insert="layouts/header :: generalheader"></nav>
 <form>
 	<label for="nombre">Nombre y Apellido: </label>
 	<input type="text" placeholder="Escribe tu nombre" name="nombre" id="nombre">
@@ -68,7 +38,7 @@
 	</select>	
 	<br></br>
 	<label for="telefono">Telefono</label>	
-	<input type="number" placeholder="3885084220" name="telefono" id="telefono"></input>
+	<input type="number" placeholder="3885084220" name="tel" id="tel"></input>
 	<br></br>
 	<label for="mail">Correo electrónico: </label>	
 	<input type="email" placeholder="alguien@mail.com" name="mail" id="mail"></input>
@@ -90,9 +60,8 @@
      <label for="msj">Mesaje:</label>
      <input type="text" id="msj" size=500></input>
 </form>
-<footer>
-	2022. Portal de Capacitación – Av. Italo Palanca – Teléfono (388) 999999 S. S. de Jujuy República
-Argentina.
+	<footer th:replace="layouts/footer.html ::footer">
+
 </footer>
 </body>
 </html>

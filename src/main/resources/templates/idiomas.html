@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -13,35 +13,12 @@
 		 alt="idiomas" src="../static/images/idiomas.jpg" style="width: 700px " title="Idiomas"
 	>
 </header>
-<nav>
-	<ul>
-		<li>
-			<a href="index.html">
-			Inicio
-			</a>
-		</li>
-		<li>
-			<a href="agenda.html">
-			Agenda
-			</a>
-		</li>
-		<li>
-			<a href="beneficios.html">
-			Beneficios y Becas
-			</a>
-		</li>
-		<li>
-			<a href="contacto.html">
-			Contáctanos
-			</a>
-		</li>
-	</ul>
-</nav>
+	<nav th:insert="layouts/header :: generalheader"></nav>
 <section>
 	<p>
 		A continuación se le brindará información acerca del curso
 	</p>
-	<table border="1">
+	<table style="border:1px" >
 		<caption>
 			Informacion del curso.
 		</caption>
@@ -65,5 +42,8 @@
 		</tr>
 	</table>
 </section>
+	<footer th:replace="layouts/footer.html ::footer">
+
+	</footer>
 </body>
 </html>
