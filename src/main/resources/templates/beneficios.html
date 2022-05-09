@@ -9,11 +9,62 @@
 <body>
 <div th:insert="layouts/header :: headerbeneficios"></div>
 <nav th:insert="layouts/header :: generalheader"></nav>
-    <section>
-        <p>Página en construcción</p>
-    </section>
-    <footer th:replace="layouts/footer.html ::footer">
-
-    </footer>
+    <br>
+   	<div class="container">
+			<div class="row">
+				<h3>LISTADO DE BECAS</h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-10">
+					<table class="table table-striped">
+						<tr>
+							<th>Codigo</th>
+							<th>Curso</th>
+							<th>Fecha apertura</th>
+							<th>Fecha cierre</th>
+						</tr>
+						<tr th:each="b: ${becas}">
+							<td th:text="${b.codigo}"></td>
+							<td th:text="${b.curs.titulo}"></td>
+							<td th:text="${b.fechaInicio}"></td>
+							<td th:text="${b.fechaFin}"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		
+		<div class="container">
+			<div class="row">
+				<h3>LISTADO DE ALUMNOS</h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-10">
+					<table class="table table-striped">
+						<tr>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>mail</th>
+							<th>Telefono</th>
+							<th>DNI</th>
+						</tr>
+						<tr th:each="b: ${alumnos}">
+							<td th:text="${b.nombre}"></td>
+							<td th:text="${b.apellido}"></td>
+							<td th:text="${b.email}"></td>
+							<td th:text="${b.telefono}"></td>
+							<td th:text="${b.din}"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<footer th:replace="layouts/footer.html ::footer">
+		
+		
+		</footer>
 </body>
 </html>
