@@ -4,12 +4,55 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-	<footer id="footer" th:fragment="footer">
-	<p> 2022. Portal de capacitación-Av.Gral.Manuel Belgrano
-        789-Teléfono(388)999999 S.S de Jujuy República Argentina</p>
+	<footer id="footer" th:fragment="footer" style="text-align: center">
+		<br />
+		<p> 2022. Portal de capacitación-Av.Gral.Manuel Belgrano
+	        789-Teléfono(388)999999 S.S de Jujuy República Argentina
+	    </p>
     </footer>
     
-     <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
+    <footer id="footerdos" th:fragment="footerdos">
+			<div class="container-fluid">
+				<div class="row p-5 pb-2" style="background-color: #a3e4d7;">
+					<div class="col-xs-12 col-md-6 col-lg-3">
+						<p class="h5 mb-3">Educación</p>
+						<p class="text-secondary">Av. Manuel Belgrano N° 120</p>
+						<div class="mb-2">
+							<a class="text-secondary text-decoration-none" th:href="@{#}">Desarrollo</a>
+						</div>
+						<div class="mb-2">
+							<a class="text-secondary text-decoration-none" th:href="@{#}">Idiomas</a>
+						</div>
+						<div class="mb-2">
+							<a class="text-secondary text-decoration-none" th:href="@{#}">Diseño</a>
+						</div>
+						<div class="mb-2">
+							<a class="text-secondary text-decoration-none" th:href="@{#}">Videojuegos</a>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-3">
+						<p class="h5 mb-3">Equipo</p>
+						<div class="mb-2">
+							<a class="text-secondary text-decoration-none" th:href="@{#}">Instructores</a>
+						</div>
+						<div class="mb-2">
+							<a class="text-secondary text-decoration-none" th:href="@{#}">Invitados especiales</a>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-3">
+						<p class="h5">Sitios de interés</p>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-3">
+						<p class="h5">Contacto</p>
+					</div>
+					<div class="col-xs-12 pt-4"> 
+			    		<p class="text-white text-center">Copyright - Todos los derechos reservados 2022</p>
+			    	</div>
+				</div>
+			</div>
+    </footer>
+    
+    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="webjars/popper.js/2.9.3/js/popper.min.js"></script>
     <script type="text/javascript" src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>

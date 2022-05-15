@@ -2,19 +2,32 @@
 
 p{
 	color: #005B96;
-	text-align:center;
-	font-family: "Times New Roman"
+	font-style: normal;
 }
+
 h1{
 	color: #005B96;
 	font-family: "Helvetica";
 	background-color: #a3e4d7 ;
 }
+
+h4{
+	justify-content: center;
+	background-color:white;
+	color: #005B96;
+}
+
+h5{
+	color: #005B96;
+	font-family: "Helvetica";
+	background-color: #a3e4d7 ;
+}
+
 body{
 	background-color:  #d0ece7 ;
 }
 
-#h4{
-	justify-content: center;
-	background-color:#a3e4d7;
+.carousel-inner> .item> img {
+ 	width: 640px; 
+ 	height: 360px; 
 }
