@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet"  type="text/css" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet"  type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 <body>
-<header th:insert="layouts/header :: headeragenda"></header>
-<nav th:insert="layouts/header :: generalheader"></nav>
-		<section>
-				<p>
-					video informativo sobre el beneficio
-				</p>
-		</section>
-		<div style="text-align: center">
-				<video src="../static/video/Becas Progresar 16 y 17 años.mp4" controls ></video>
-       	</div>
-		<footer th:replace="layouts/footer.html ::footer">
-
-		</footer>
-	</body>
+	<nav th:insert="layouts/header :: generalheader"></nav>
+	<br />
+	<header th:insert="layouts/header :: headeragenda"></header>
+	
+	<section style="text-align: center">
+			<br />
+			<h5>Video informativo sobre el beneficio</h5>
+	</section>
+	
+	<div style="text-align: center">
+		<video src="../static/video/Becas_Progresar_16_y_17_anios.mp4" controls ></video>
+     </div>
+	<footer th:replace="layouts/footer.html ::footer"></footer>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+	
+</body>
 </html>

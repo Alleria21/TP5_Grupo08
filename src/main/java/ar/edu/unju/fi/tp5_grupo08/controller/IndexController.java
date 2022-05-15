@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import ar.edu.unju.fi.tp5_grupo08.ListaAlumnos.ListaAlumnos;
-import ar.edu.unju.fi.tp5_grupo08.ListaBeca.ListaBeca;
+import ar.edu.unju.fi.tp5_grupo08.until.ListaAlumnos;
+import ar.edu.unju.fi.tp5_grupo08.until.ListaBeca;
 
 
 

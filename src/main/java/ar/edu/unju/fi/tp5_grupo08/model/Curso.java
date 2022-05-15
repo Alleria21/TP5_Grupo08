@@ -7,25 +7,27 @@ public class Curso {
 	private String titulo;
 	private String Categoria;
 	private LocalDate fechaInicio;
-	private LocalDate fechafin;
+	private LocalDate fechaFin;
 	private int horas;
 	private String modalidad;
 	private Docente docente;
 	public Curso() {
 		// TODO Auto-generated constructor stub
 	}
-	public Curso(int codigo, String titulo, String categoria, LocalDate fechaInicio, LocalDate fechafin, int horas,
+	
+	public Curso(int codigo, String titulo, String categoria, LocalDate fechaInicio, LocalDate fechaFin, int horas,
 			String modalidad, Docente docente) {
 		super();
 		this.codigo = codigo;
 		this.titulo = titulo;
 		Categoria = categoria;
 		this.fechaInicio = fechaInicio;
-		this.fechafin = fechafin;
+		this.fechaFin = fechaFin;
 		this.horas = horas;
 		this.modalidad = modalidad;
 		this.docente = docente;
 	}
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -50,11 +52,11 @@ public class Curso {
 	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-	public LocalDate getFechafin() {
-		return fechafin;
+	public LocalDate getFechaFin() {
+		return fechaFin;
 	}
-	public void setFechafin(LocalDate fechafin) {
-		this.fechafin = fechafin;
+	public void setFechaFin(LocalDate fechaFin) {
+		this.fechaFin = fechaFin;
 	}
 	public int getHoras() {
 		return horas;
@@ -74,7 +76,5 @@ public class Curso {
 	public void setDocente(Docente docente) {
 		this.docente = docente;
 	}
-	
-	
 	
 }

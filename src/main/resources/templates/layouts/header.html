@@ -2,16 +2,51 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 <body>
 	<nav id="generalheader" th:fragment="generalheader">
-        <ul>
-            <li> <a href="inicio"> Inicio </a></li>
-            <li> <a href="agenda"> Agenda</a></li>
-            <li> <a href="beneficios"> Beneficios y Becas </a></li>
-            <li> <a href="contacto"> Contáctanos </a></li>
-        </ul>
-    </nav>
+	
+		<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #a3e4d7;">
+		 <div class="container-fluid">
+    		<a class="navbar-brand">| Navegación |</a>
+   			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    		</button>
+    		<div class="collapse navbar-collapse" id="navbarScroll">
+      			<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+	        		<li class="nav-item">
+	          			<a class="nav-link active" aria-current="page" href="/inicio">Inicio</a>
+	        		</li>
+	        		<li class="nav-item">
+	          			<a class="nav-link" href="/agenda">Agenda</a>
+	        		</li>
+	        		<li class="nav-item">
+	          			<a class="nav-link" href="/beneficios">Beneficios y Becas</a>
+	        		</li>
+	        		<li class="nav-item dropdown">
+	          			<a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            			Datos
+	          			</a>
+	          			<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+	            			<li><a class="dropdown-item" th:href="@{/docente/ListaDocentes}">Docentes</a></li>
+	            			<li><a class="dropdown-item" th:href="@{/alumno/ListaAlumnos}">Alumnos</a></li>
+	            			<li><hr class="dropdown-divider"></li>
+	            			<li><a class="dropdown-item" th:href="@{/beca/ListaBecas}">Becas</a></li>
+	            			<li><a class="dropdown-item" th:href="@{/curso/ListaCursos}">Cursos</a></li>
+	          			</ul>
+	        		</li>
+      			</ul>
+      			<form class="d-flex">
+        			<input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar...">
+        			<button class="btn btn-outline-success" type="submit">Buscar</button>
+      			</form>
+    		</div>
+  		</div>
+  		</nav>
+  		
+	</nav>
     
 	<header id="headerindex" th:fragment="headerindex">
         <h1 style="text-align: center"> Nuestro Primer Proyecto HTML</h1>
@@ -38,6 +73,10 @@
 		<h1>Contactos</h1>
 		<img alt="contactos" src="images/contactos.jpg" style="width: 700px " title="Contactos">
     </header>
+    
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
     
 </body>
 </html>
