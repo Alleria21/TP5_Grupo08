@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.tp5_grupo08.ListaBeca;
+package ar.edu.unju.fi.tp5_grupo08.until;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
