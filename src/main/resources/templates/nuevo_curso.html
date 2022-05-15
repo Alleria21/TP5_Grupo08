@@ -11,7 +11,7 @@
 	
 	<div class="container">
 		<br />
-		<h3>Alta de Beca</h3>
+		<h3>Alta de Curso</h3>
 		<br />
 		<form th:object="${curso}" th:action="@{/curso/agregar}" method="POST">
 			<div class="form-floating mb-3">
@@ -19,11 +19,11 @@
 	  			<label for="codigoId">Codigo</label>
 			</div>
 			<div class="form-floating mb-3">
-	  			<input th:field="*{curs.titulo}" type="text" class="form-control" id="tituloId" placeholder="curse name">
+	  			<input th:field="*{titulo}" type="text" class="form-control" id="tituloId" placeholder="curse name">
 	  			<label for="tituloId">Titulo</label>
 			</div>
 			<div class="form-floating mb-3">
-	  			<input th:field="*{curs.categoria}" type="text" class="form-control" id="categoriaId" placeholder="curse category">
+	  			<input th:field="*{categoria}" type="text" class="form-control" id="categoriaId" placeholder="curse category">
 	  			<label for="categoriaId">Categoria</label>
 			</div>
 			<div class="form-floating mb-3">
@@ -35,7 +35,7 @@
   				<label for="fechaFinId">Fecha de Cierre</label>
 			</div>
 			<div class="form-floating mb-3">
-  				<input th:field="*{hora}" type="number" class="form-control" id="horaId" placeholder="hh:mm:ss">
+  				<input th:field="*{horas}" type="number" class="form-control" id="horaId" placeholder="hh:mm:ss">
   				<label for="horaId">Cant. Horas</label>
 			</div>
 			<div class="form-floating mb-3">
@@ -43,11 +43,11 @@
 	  			<label for="modalidadId">Modalidad</label>
 			</div>
 			<div class="form-floating mb-3">
-	  			<input th:field="*{curs.docente.apellido}" type="text" class="form-control" id="estadoId" placeholder="teacher surname">
+	  			<input th:field="*{docente.apellido}" type="text" class="form-control" id="estadoId" placeholder="teacher surname">
 	  			<label for="estadoId">Apellido docente</label>
 			</div>
 			<div class="form-floating mb-3">
-	  			<input th:field="*{curs.docente.nombre}" type="text" class="form-control" id="estadoId" placeholder="teacher name">
+	  			<input th:field="*{docente.nombre}" type="text" class="form-control" id="estadoId" placeholder="teacher name">
 	  			<label for="estadoId">Nombre docente</label>
 			</div>
 
