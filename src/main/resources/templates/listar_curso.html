@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+	<nav th:insert="layouts/header :: generalheader"></nav>
+
+	<div class="container">
+		<br />
+		<h3>Listado de Cursos</h3>
+		
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  			<a th:href="@{/beca/nuevo}" class="btn btn-primary" type="button">Nuevo</a>
+		</div>
+		
+		<div class="col-sm-12 col-md-10">
+			<table class="table" style="background-color: #a3e4d7;" border="1">
+				<tr style="text-align: center">
+					<th>Codigo</th>
+					<th>Titulo</th>
+					<th>Categoria</th>
+					<th>Fecha de Apetura</th>
+					<th>Fecha de Cierre</th>
+					<th>Cantidad Horas</th>
+					<th>Modalidad</th>
+					<th></th>
+					<th>Docente</th>
+				</tr>
+				<tr th:each="curso: ${unCurso}" style="text-align: center">
+					<td th:text="${curso.codigo}"></td>
+					<td th:text="${curso.titulo}"></td>
+					<td th:text="${curso.categoria}"></td>
+					<td th:text="${curso.fechaInicio}"></td>
+					<td th:text="${curso.fechaFin}"></td>
+					<td th:text="${curso.horas}"></td>
+					<td th:text="${curso.modalidad}"></td>
+					<td></td>
+					<td th:text="${curso.docente.apellido}"></td>
+					<td th:text="${curso.docente.nombre}"></td>
+					<td>
+						<a href="#" id="editarBeca" class="btn btn-warning">Editar</a>
+						<a href="#" id="eliminarBeca" class="btn btn-danger">Eliminar</a>
+					</td>
+				</tr>	
+			</table>
+		</div>
+	</div>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+	
+</body>
+</html>
