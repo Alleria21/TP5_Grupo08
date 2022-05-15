@@ -1,6 +1,5 @@
 package ar.edu.unju.fi.tp5_grupo08.model;
 
-import java.time.LocalDate;
 
 public class Alumno {
 	private int din;

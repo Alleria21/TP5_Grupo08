@@ -31,12 +31,26 @@
 	          			</a>
 	          			<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 	            			<li><a class="dropdown-item" th:href="@{/docente/listadocentes}">Docentes</a></li>
-	            			<li><a class="dropdown-item" th:href="@{/alumno/ListaAlumnos}">Alumnos</a></li>
+	            			<li><a class="dropdown-item" th:href="@{/Alumno/listaAlumnos}">Alumnos</a></li>
 	            			<li><hr class="dropdown-divider"></li>
 	            			<li><a class="dropdown-item" th:href="@{/beca/ListaBecas}">Becas</a></li>
 	            			<li><a class="dropdown-item" th:href="@{/curso/ListaCursos}">Cursos</a></li>
 	          			</ul>
 	        		</li>
+	        		
+	        		 <li class="nav-item dropdown">
+				          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				            Formularios
+				          </a>
+				          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				            <li><a class="dropdown-item" th:href="@{/docente}">Cargar Docentes</a></li>
+				            <li><a class="dropdown-item" th:href="@{/Alumno/nuevo}">Cargar Alumnos</a></li>
+				            <li><hr class="dropdown-divider"></li>
+				            <li><a class="dropdown-item" th:href="@{/Beca/nuevo}">Cargar Becas</a></li>
+				            <li><a class="dropdown-item" th:href="@{/curso/nuevo}">Cargar Cursos</a></li>
+				          </ul>
+				        </li>
+				        
       			</ul>
       			<form class="d-flex">
         			<input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar...">
