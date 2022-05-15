@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+
+</head>
+<body>
+<nav th:replace="layouts/header.html :: generalheader"></nav>
+<h1 class="text-center">Plantel Docente</h1>
+<div class="my-5">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
+        <button class="btn btn-primary me-md-2 px-3" type="button"><a href="../docente" style="color: white"> Nuevo </a></button>
+
+    </div>
+    <table class="table table-success table-striped ">
+        <thead>
+        <tr>
+            <th>legajo</th>
+            <th>nombres</th>
+            <th>apellidos</th>
+            <th>e-mail</th>
+            <th>telefono</th>
+            <th>opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="docente:${docentes}">
+            <td th:text="${docente.legajo}"></td>
+            <td th:text="${docente.nombre}"></td>
+            <td th:text="${docente.apellido}"></td>
+            <td th:text="${docente.email}"></td>
+            <td th:text="${docente.telefono}"></td>
+            <td>
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Eliminar</button>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:replace="layouts/footer.html ::footer"></footer>
+<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
