@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import ar.edu.unju.fi.tp5_grupo08.until.ListaAlumnos;
-import ar.edu.unju.fi.tp5_grupo08.until.ListaBeca;
+import ar.edu.unju.fi.tp5_grupo08.until.ListaBecas;
 
 
 
@@ -24,7 +24,7 @@ public class IndexController {
 	
 	@GetMapping("/beneficios")
 	public String getBeneficios(Model model) {
-		ListaBeca listaBecas=new ListaBeca();
+		ListaBecas listaBecas=new ListaBecas();
 		model.addAttribute("becas",listaBecas.getBecas());
 		
 		ListaAlumnos listaAlumnos=new ListaAlumnos();

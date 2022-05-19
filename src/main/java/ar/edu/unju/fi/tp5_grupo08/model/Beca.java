@@ -1,19 +1,17 @@
 package ar.edu.unju.fi.tp5_grupo08.model;
 
-import java.time.LocalDate;
-
 public class Beca {
 	private int codigo;
 	private Curso curs;
-	private LocalDate fechaInicio;
-	private LocalDate fechaFin;
+	private String fechaInicio;
+	private String fechaFin;
 	private String estado;
 	
 	public Beca() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Beca(int codigo, Curso curs, LocalDate fechaInicio, LocalDate fechaFin, String estado) {
+
+	public Beca(int codigo, Curso curs, String fechaInicio, String fechaFin, String estado) {
 		super();
 		this.codigo = codigo;
 		this.curs = curs;
@@ -21,7 +19,7 @@ public class Beca {
 		this.fechaFin = fechaFin;
 		this.estado = estado;
 	}
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -38,19 +36,19 @@ public class Beca {
 		this.curs = curs;
 	}
 
-	public LocalDate getFechaInicio() {
+	public String getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(LocalDate fechaInicio) {
+	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public LocalDate getFechaFin() {
+	public String getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(LocalDate fechaFin) {
+	public void setFechaFin(String fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
@@ -61,12 +59,5 @@ public class Beca {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-
-	@Override
-	public String toString() {
-		return "Beca [codigo=" + codigo + ", curs=" + curs + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin
-				+ ", estado=" + estado + "]";
-	}
-	
 	
 }
