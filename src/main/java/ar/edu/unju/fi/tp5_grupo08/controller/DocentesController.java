@@ -7,6 +7,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +23,7 @@ public class DocentesController {
     private static final Log LOG= LogFactory.getLog(DocentesController.class);
     private ListaDocente listaDocente=new ListaDocente();
     private List<Docente> docentes = listaDocente.crearLista();
-    @GetMapping
+    @GetMapping("/nuevo")
     public String getDocente(Model model){
 
         model.addAttribute("docente",new Docente());
@@ -29,14 +31,23 @@ public class DocentesController {
         return "nuevo_docente.html";
     }
 
-    @PostMapping
-    public String agregarDocente(@ModelAttribute Docente docente){
-        docentes.add(docente);
-        LOG.info("Se ha agregado un docente");
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("docentes",docente);
-        modelAndView.setViewName("nuevo_docente.html");
-        return "redirect:/docente/listadocentes";
+    @PostMapping("/agregar")
+    public ModelAndView agregarDocente(@Validated @ModelAttribute Docente docente, BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){ //si tiene errores
+            LOG.info("Error agregando un docente");//informa el error
+            ModelAndView modelAndView = new ModelAndView("nuevo_docente.html");//vuelvo a crear vista formulario
+            modelAndView.addObject("docente",docente);//paso un docente
+            return modelAndView;//retorna la vista del formulario
+        }
+        //si no hay errores
+        docentes.add(docente);//agrega un docente a la lista
+        LOG.info("Se ha agregado un docente");//informa
+        ModelAndView modelAndView = new ModelAndView("lista_docente.html");//crea la vista de lista
+        modelAndView.addObject("docentes",docentes);//agrega el objeto docente
+        return modelAndView;//retorna la lista_docente
+
+
     }
     @GetMapping("/listadocentes")
     public String listarDocentes(Model model){
