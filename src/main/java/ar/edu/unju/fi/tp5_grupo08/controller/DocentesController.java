@@ -22,7 +22,7 @@ import java.util.List;
 public class DocentesController {
     private static final Log LOG= LogFactory.getLog(DocentesController.class);
     private ListaDocente listaDocente=new ListaDocente();
-    private List<Docente> docentes = listaDocente.crearLista();
+    private List<Docente> docentes = listaDocente.getDocente();
     @GetMapping("/nuevo")
     public String getDocente(Model model){
 

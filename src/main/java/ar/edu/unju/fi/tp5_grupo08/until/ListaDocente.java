@@ -1,17 +1,27 @@
 package ar.edu.unju.fi.tp5_grupo08.until;
 
+import java.util.ArrayList;
 import ar.edu.unju.fi.tp5_grupo08.model.Docente;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ListaDocente {
-    public List<Docente> crearLista(){
-        List<Docente> listaDocentes= new ArrayList<>();
-        listaDocentes.add(new Docente(1,"Graciela","Perez","gracielaperez@email.com",155489635));
-        listaDocentes.add(new Docente(2,"Pedro","Cruz","pedrocruz@email.com",155423456));
-        listaDocentes.add(new Docente(3,"Marcos","Julian","marcosjulian@email.com",155823457));
-        return listaDocentes;
+	private ArrayList <Docente> docentes;
+	
+	public ListaDocente() {
+		docentes = new ArrayList<Docente>();
+		Docente docente1= new Docente(100,"Rocio","Guerrero","rocio@gmail.com",3886472);
+		Docente docente2= new Docente(101,"Ignacio","Padilla","agustin@gmail.com",3882345);
+		Docente docente3= new Docente(102,"Jose","Fernandez","joch@gmail.com",3882238);
+		docentes.add(docente1);
+		docentes.add(docente2);
+		docentes.add(docente3);
+	}
+	
+	public ArrayList<Docente> getDocente() {
+		return docentes;
+	}
 
-    }
+	public void setDocente(ArrayList<Docente> docentes) {
+		this.docentes = docentes;
+	}
+	
 }
