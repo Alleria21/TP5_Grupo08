@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
@@ -10,7 +10,7 @@
 <h1 class="text-center">Plantel Docente</h1>
 <div class="my-5">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
-        <button class="btn btn-primary me-md-2 px-3" type="button"><a href="../docente" style="color: white"> Nuevo </a></button>
+        <button class="btn btn-primary me-md-2 px-3" type="button"><a href="../docente/nuevo" style="color: white"> Nuevo </a></button>
 
     </div>
     <table class="table table-success table-striped ">
@@ -32,8 +32,10 @@
             <td th:text="${docente.email}"></td>
             <td th:text="${docente.telefono}"></td>
             <td>
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger">Eliminar</button>
+                <div>
+                    <a th:href="@{/docente/editar/}+${docente.legajo}" id="modificarDocente" class="btn btn-warning">Editar</a>
+                    <a th:href="@{/docente/eliminar/}+${docente.legajo}" id="eliminarDocente" class="btn btn-danger">Eliminar</a>
+                </div>
 
             </td>
 

@@ -2,10 +2,14 @@ package ar.edu.unju.fi.tp5_grupo08.until;
 
 import java.util.ArrayList;
 import ar.edu.unju.fi.tp5_grupo08.model.Docente;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class ListaDocente {
 	private ArrayList <Docente> docentes;
-	
+
+
 	public ListaDocente() {
 		docentes = new ArrayList<Docente>();
 		Docente docente1= new Docente(100,"Rocio","Guerrero","rocio@gmail.com",3886472);
