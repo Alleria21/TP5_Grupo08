@@ -8,7 +8,6 @@ import javax.validation.constraints.Positive;
 public class Docente {
 
 	@Positive(message = "Debe ingresar valores positivos")
-	@NotNull(message = "El campo Legajo no puede ser nulo")
 	private int legajo;
 	@NotBlank(message = "El campo Nombre no puede estar en blanco")
 	@NotNull(message = "El campo Nombre no puede ser nulo ")
