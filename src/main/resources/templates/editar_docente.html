@@ -1,0 +1,60 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+
+</head>
+<body>
+    <nav th:replace="layouts/header.html :: generalheader"></nav>
+
+<div class="container-fluid">
+
+
+    <form th:action="@{/docente/modificar}" method="POST" th:object="${docente}">
+        <div class="row mb-5 mt-5">
+            <div class="col-4"></div>
+            <div class="col-4 border border-dark ">
+                <h4 class="text-center mt-3">Modificar Docente</h4>
+
+                <input type="hidden" th:field="*{legajo}">
+                <label for="legajoId" class="form-label ">Legajo</label>
+                <input  th:value="${legajo}" type="number" class="form-control" id="legajoId" disabled="disabled">
+                <!--  <div class="text-danger" th:if="${#fields.hasErrors('legajo')}" th:errors="*{legajo}"></div>-->
+
+
+                <label for="nombreId" class="form-label ">Nombre Docente</label>
+                <input  th:field="*{nombre}" type="text" class="form-control" id="nombreId" placeholder="Ingrese username">
+                <div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+
+
+                <label for="apellidoId" class="form-label ">Apellido</label>
+                <input  th:field="*{apellido}" type="text" class="form-control" id="apellidoId" placeholder="Ingrese apellido">
+                <div class="text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
+
+
+                <label for="emailId" class="form-label ">Email</label>
+                <input  th:field="*{email}" type="text" class="form-control" id="emailId" placeholder="Ingrese email">
+                <div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+
+                <label for="emailId" class="form-label ">Telefono</label>
+                <input  th:field="*{telefono}" type="text" class="form-control" id="telefonoId" placeholder="Ingrese telefono">
+                <div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                    <button class="btn btn-primary me-md-2" type="submit">Editar</button>
+                    <a th:href="@{/docente/listadocentes}" id="cancel" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </form>
+</div>
+
+<footer th:replace="layouts/footer.html ::footer"></footer>
+<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
