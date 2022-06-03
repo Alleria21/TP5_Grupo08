@@ -35,8 +35,8 @@
 						<td th:text="${b.email}"></td>
 						<td th:text="${b.telefono}"></td>
 						<td>
-						<a href="#" id="editarAlumno" class="btn btn-warning">Editar</a>
-							<a href="#" id="eliminarAlumno" class="btn btn-danger">Eliminar</a>
+						<a th:href="@{/Alumno/editar/}+${b.din}" id="editarAlumno" class="btn btn-warning">Editar</a>
+							<a th:href="@{/Alumno/eliminar/}+${b.din}" id="eliminarAlumno" class="btn btn-danger">Eliminar</a>
 						<td>
 					</tr>
 			</table>

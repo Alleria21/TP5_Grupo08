@@ -8,7 +8,9 @@ import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.NumberFormat;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Alumno {
 	@Min(value=1000000, message="El n° de DNI debe ser mayor a 1.000.000")
 	private int din;

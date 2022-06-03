@@ -2,11 +2,13 @@ package ar.edu.unju.fi.tp5_grupo08.until;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import ar.edu.unju.fi.tp5_grupo08.model.Alumno;
 
 
 
-
+@Component
 public class ListaAlumnos {
 	private ArrayList<Alumno> alumnos;
 	
