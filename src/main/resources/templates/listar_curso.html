@@ -42,8 +42,8 @@
 					<td th:text="${curso.docente.apellido}"></td>
 					<td th:text="${curso.docente.nombre}"></td>
 					<td>
-						<a href="#" id="editarBeca" class="btn btn-warning">Editar</a>
-						<a href="#" id="eliminarBeca" class="btn btn-danger">Eliminar</a>
+						<a th:href="@{/curso/editar/}+${curso.codigo}" id="editarCurso" class="btn btn-warning">Editar</a>
+						<a th:href="@{/curso/eliminar/}+${curso.codigo}" id="eliminarCurso" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>	
 			</table>
