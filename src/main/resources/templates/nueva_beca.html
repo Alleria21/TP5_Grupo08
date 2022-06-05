@@ -13,22 +13,38 @@
 					<div class="row mb-5 mt-5">
 						<div class="col-4"></div>
 						<div class="col-4 border border-dark ">
-							<h2 class="mt-3">Alta de Beca</h2>
-							<label class="form-label" for=codigo>Codigo</label>
-							<input th:field="*{codigo}" class="form-control pb-2" id="codigo" type="number" placeholder="Codigo de la Beca">
-							<label class="form-label" for=curso>Curso</label>
-							<input th:field="*{curs.titulo}" class="form-control pb-2" id="curso" type="text" placeholder="Nombre del Curso">
-							<label class="form-label" for=fi>Fecha de Apertura</label>
-							<input th:field="*{fechaInicio}" class="form-control pb-2" id="fi" type="text" placeholder="YYYY-MM-dd">
-							<label class="form-label" for=fc>Fecha de Cierre</label>
-							<input th:field="*{fechaFin}" class="form-control pb-2" id="fc" type="text" placeholder="YYYY-MM-dd">
+							<h3 class="mt-3">Alta de Beca</h3>
+							<div class="form-floating mb-3">
+					  			<input th:field="*{codigo}" type="number" class="form-control" id="codigoId" placeholder="1234 example">
+					  			<label for="codigoId">Codigo</label>
+					  			<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
+							</div>
+							<div class="form-floating mb-3">
+					  			<input th:field="*{fechaInicio}" type="date" class="form-control" id="fechaInicioId" placeholder="YYYY-MM-dd">
+					  			<label for="fechaInicioId">Fecha de Apertura</label>
+					  			<div class="text-danger" th:if="${#fields.hasErrors('fechaInicio')}" th:errors="*{fechaInicio}"></div>
+							</div>
+							<div class="form-floating mb-3">
+				  				<input th:field="*{fechaFin}" type="date" class="form-control" id="fechaFinId" placeholder="YYYY-MM-dd">
+				  				<label for="fechaFinId">Fecha de Cierre</label>
+				  				<div class="text-danger" th:if="${#fields.hasErrors('fechaFin')}" th:errors="*{fechaFin}"></div>
+							</div>
 							<label class="form-label" for=estado>Estado</label>
 							<input th:field="*{estado}" class="form-control pb-2" id="estado" type="text" placeholder="Estado del Curso">
-						
+							<br />
+							<div>
+				  			<select class="form-control mb-3" th:field="*{curs.titulo}" id="cursoId">
+				  				<label for="cursoId">Seleccione un Curso</label>
+				  				<option value="0">Elija un Curso</option>
+				  				<option th:each="curs: ${unCurso}" th:value="${curs.titulo}" th:text="${curs.titulo}"></option>
+				  			</select>
+		  					<div class="text-danger" th:if="${#fields.hasErrors('curs')}" th:errors="*{curs}"></div>
+							</div> 
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button class="btn btn-primary me-md-2" type="submit">Enviar</button>
-                            <button class="btn btn-secondary" type="reset">Cancelar</button>
+                           	<button class="btn btn-primary me-md-2" type="submit">Enviar</button>
+                            <a th:href="@{/inicio}" class="btn btn-secondary" type="button">Cancelar</a>
                         	</div>
+                        	<br/>
                         </div>
                         <div class="col-4"></div>
                       </div>							

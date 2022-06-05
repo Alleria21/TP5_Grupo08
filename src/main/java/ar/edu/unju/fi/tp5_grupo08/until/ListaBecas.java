@@ -2,10 +2,14 @@ package ar.edu.unju.fi.tp5_grupo08.until;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import org.springframework.stereotype.Component;
+
 import ar.edu.unju.fi.tp5_grupo08.model.Beca;
 import ar.edu.unju.fi.tp5_grupo08.model.Curso;
 import ar.edu.unju.fi.tp5_grupo08.model.Docente;
 
+@Component
 public class ListaBecas {
 	private ArrayList <Beca> becas;
 	
