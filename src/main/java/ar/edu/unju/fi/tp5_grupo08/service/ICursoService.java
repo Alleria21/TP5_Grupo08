@@ -1,7 +1,7 @@
 package ar.edu.unju.fi.tp5_grupo08.service;
 
+import ar.edu.unju.fi.tp5_grupo08.entity.Docente;
 import ar.edu.unju.fi.tp5_grupo08.model.Curso;
-import ar.edu.unju.fi.tp5_grupo08.model.Docente;
 import ar.edu.unju.fi.tp5_grupo08.until.ListaCursos;
 import ar.edu.unju.fi.tp5_grupo08.until.ListaDocente;
 
