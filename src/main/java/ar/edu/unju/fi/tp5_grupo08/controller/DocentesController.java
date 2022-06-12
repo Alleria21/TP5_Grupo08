@@ -1,7 +1,7 @@
 package ar.edu.unju.fi.tp5_grupo08.controller;
 
 
-import ar.edu.unju.fi.tp5_grupo08.model.Docente;
+import ar.edu.unju.fi.tp5_grupo08.entity.Docente;
 import ar.edu.unju.fi.tp5_grupo08.service.IDocenteService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -46,14 +46,14 @@ public class DocentesController {
         //docentes.add(docente);//agrega un docente a la lista
         LOG.info("Se ha agregado un docente");//informa
         ModelAndView modelAndView = new ModelAndView("lista_docente.html");//crea la vista de lista
-        modelAndView.addObject("docentes",docenteService.getListaDocente().getDocente());//agrega el objeto docente
+        modelAndView.addObject("docentes",docenteService.getListaDocente());//agrega el objeto docente
         return modelAndView;//retorna la lista_docente
 
 
     }
     @GetMapping("/listadocentes")
     public String listarDocentes(Model model){
-        model.addAttribute("docentes", docenteService.getListaDocente().getDocente());
+        model.addAttribute("docentes", docenteService.getListaDocente());
         return "lista_docente.html";
     }
 

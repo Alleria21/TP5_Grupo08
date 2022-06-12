@@ -1,19 +1,21 @@
 package ar.edu.unju.fi.tp5_grupo08.service.imp;
 
-import ar.edu.unju.fi.tp5_grupo08.model.Docente;
+import ar.edu.unju.fi.tp5_grupo08.entity.Docente;
+import ar.edu.unju.fi.tp5_grupo08.repository.DocenteRepository;
 import ar.edu.unju.fi.tp5_grupo08.service.IDocenteService;
-import ar.edu.unju.fi.tp5_grupo08.until.ListaDocente;
+
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class DocenteServiceImp implements IDocenteService {
 
     @Autowired
-    private ListaDocente listaDocente;
-
+    private DocenteRepository docenteRepository;
 
     @Override
     public Docente getDocente() {
@@ -22,34 +24,40 @@ public class DocenteServiceImp implements IDocenteService {
 
     @Override
     public boolean guardarDocente(Docente docente) {
-        return listaDocente.getDocente().add(docente);
+        docente.setEstado(true);
+        if(docenteRepository.save(docente)!= null) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public void modificarDocente(Docente docente) {
-        for(Docente doc : listaDocente.getDocente()) {
-            if(doc.getLegajo() == docente.getLegajo()) {
-                doc.setNombre(docente.getNombre());
-                doc.setApellido(docente.getApellido());
-                doc.setEmail(docente.getEmail());
-                doc.setTelefono(docente.getTelefono());
-            }
-        }
+        //docenteRepository.save(docente);
+        Docente doc = docenteRepository.findByLegajo(docente.getLegajo());
+        doc.setNombre(docente.getNombre());
+        doc.setApellido(docente.getApellido());
+        doc.setEmail(docente.getEmail());
+        doc.setTelefono(docente.getTelefono());
+        docenteRepository.save(doc);
     }
 
     @Override
+    @Transactional
     public void eliminarDocente(int legajo) {
-        listaDocente.getDocente().removeIf(d ->d.getLegajo()== legajo);
+        Docente docente = buscarDocente(legajo);
+        docente.setEstado(false);
+        docenteRepository.save(docente);
     }
 
     @Override
-    public ListaDocente getListaDocente() {
-        return listaDocente;
+    public List<Docente> getListaDocente() {
+        //return docenteRepository.findAll();
+        return docenteRepository.findByEstado(true);
     }
 
     @Override
     public Docente buscarDocente(int legajo) {
-        Optional<Docente> docente = listaDocente.getDocente().stream().filter(c ->c.getLegajo()== legajo).findFirst();
-        return docente.get();
+        return docenteRepository.findByLegajo(legajo);
     }
 }

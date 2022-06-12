@@ -2,11 +2,11 @@ package ar.edu.unju.fi.tp5_grupo08.service.imp;
 
 import java.util.Optional;
 
+import ar.edu.unju.fi.tp5_grupo08.entity.Docente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.tp5_grupo08.model.Curso;
-import ar.edu.unju.fi.tp5_grupo08.model.Docente;
 import ar.edu.unju.fi.tp5_grupo08.service.ICursoService;
 import ar.edu.unju.fi.tp5_grupo08.until.ListaCursos;
 import ar.edu.unju.fi.tp5_grupo08.until.ListaDocente;

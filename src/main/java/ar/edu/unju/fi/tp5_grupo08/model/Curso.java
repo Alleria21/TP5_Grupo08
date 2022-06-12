@@ -8,6 +8,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
+import ar.edu.unju.fi.tp5_grupo08.entity.Docente;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Curso {

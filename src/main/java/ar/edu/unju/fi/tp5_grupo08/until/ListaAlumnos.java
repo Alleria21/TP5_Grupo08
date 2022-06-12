@@ -2,9 +2,9 @@ package ar.edu.unju.fi.tp5_grupo08.until;
 
 import java.util.ArrayList;
 
+import ar.edu.unju.fi.tp5_grupo08.model.Alumno;
 import org.springframework.stereotype.Component;
 
-import ar.edu.unju.fi.tp5_grupo08.model.Alumno;
 
 
 
